@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My Webcomic'
+title = 'Mini Webcomic'
 
 [params]
 description = 'A minimal webcomic template built with Bootstrap and Hugo.'

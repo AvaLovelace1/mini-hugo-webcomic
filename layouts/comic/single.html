@@ -2,12 +2,18 @@
     {{$comics_dir := "img/comics"}}
     {{$chapter := .Params.chapterID}}
     {{$page_num := int .File.BaseFileName}}
+
     {{$comic_img_raw := resources.GetMatch (printf "%s/%s_%03d*" $comics_dir $chapter $page_num)}}
     {{$comic_img := $comic_img_raw.Resize (printf "%dx %s" site.Params.comicResizeWidth site.Params.imgFormat)}}
     {{$comic_alt := printf "%s comic page %d" .Title $page_num}}
 
+    {{$title := .Title}}
+
+    {{partial "comicnav" .}}
     <img id="comic-img" class="img-fluid" src="{{$comic_img.Permalink}}" alt="{{$comic_alt}}"/>
-    <h1>{{.Title}}</h1>
+    {{partial "comicnav" .}}
+
+    <h1 class="mt-4 mt-sm-5">{{$title}}</h1>
     <p>
         <span id="publish-date"><strong>Published:</strong> {{.Date.Format site.Params.dateFormat}}<br/></span>
     </p>

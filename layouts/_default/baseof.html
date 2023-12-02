@@ -5,7 +5,13 @@
 
 <body class="d-flex flex-column min-vh-100">
 {{block "header" .}}{{partial "header" .}}{{end}}
-{{block "main" .}}{{end}}
+<div class="my-4 my-sm-5 container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10 col-lg-8 col-xl-7">
+            {{block "main" .}}{{end}}
+        </div>
+    </div>
+</div>
 {{block "footer" .}}{{partial "footer" .}}{{end}}
 
 {{block "tail" .}}{{partial "tail" .}}{{end}}

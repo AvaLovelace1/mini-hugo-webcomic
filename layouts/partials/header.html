@@ -9,8 +9,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 {{range site.Menus.main}}
+                    {{$isMenuCurrent := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .)}}
+                    {{$isMenuHomeAndPageComic := and (eq .Name "Home") (eq $.Section "comic")}}
+                    {{$isActive := or $isMenuCurrent $isMenuHomeAndPageComic}}
                     <li class="nav-item">
-                        <a class="nav-link {{if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .)}}active{{end}}"
+                        <a class="nav-link {{if $isActive}}active{{end}}"
                            href="{{.URL}}">{{.Name}}</a>
                     </li>
                 {{end}}

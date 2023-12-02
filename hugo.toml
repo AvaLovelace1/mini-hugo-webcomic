@@ -1,3 +1,8 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My Webcomic'
+
+[params]
+description = 'A minimal webcomic template built with Bootstrap and Hugo.'
+[params.author]
+name = 'My Name'

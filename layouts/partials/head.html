@@ -1,0 +1,15 @@
+{{$title := site.Title}}
+{{$author := site.Params.author.name}}
+{{$description := .Description | default site.Params.description}}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{with $title}}<title>{{.}}</title>{{end}}
+    {{with $author}}<meta name="author" content="{{.}}"/>{{end}}
+    {{with $description}}<meta name="description" content="{{.}}"/>{{end}}
+
+    {{template "_internal/opengraph.html" .}}
+    {{template "_internal/twitter_cards.html" .}}
+</head>

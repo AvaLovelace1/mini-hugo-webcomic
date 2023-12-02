@@ -4,6 +4,7 @@ title = 'My Webcomic'
 
 [params]
 description = 'A minimal webcomic template built with Bootstrap and Hugo.'
+dateFormat = "Jan 2, 2006"
 [params.author]
 name = 'My Name'
 
@@ -16,3 +17,6 @@ weight = 1
 name = 'About'
 pageRef = '/about'
 weight = 2
+
+[imaging]
+resampleFilter = "Lanczos"

@@ -2,12 +2,20 @@
     {{$comics_dir := "img/comics"}}
     {{$chapter := .Params.chapterID}}
     {{$page_num := int .File.BaseFileName}}
+    {{$is_first_page_of_chapter := or (not .Next) (ne .Next.Params.chapterID $chapter)}}
+    {{$is_last_page_of_chapter := or (not .Prev) (ne .Prev.Params.chapterID $chapter)}}
+    {{$is_single_page_chapter := and $is_first_page_of_chapter $is_last_page_of_chapter}}
 
     {{$comic_img_raw := resources.GetMatch (printf "%s/%s_%03d*" $comics_dir $chapter $page_num)}}
     {{$comic_img := $comic_img_raw.Resize (printf "%dx %s" site.Params.comicResizeWidth site.Params.imgFormat)}}
     {{$comic_alt := printf "%s comic page %d" .Title $page_num}}
 
-    {{$title := .Title}}
+    {{$title := ""}}
+    {{if $is_single_page_chapter}}
+        {{$title = .Title}}
+    {{else}}
+        {{$title = printf "%s &bull; Page %d" .Title $page_num | safeHTML}}
+    {{end}}
 
     {{partial "comicnav" .}}
     <img id="comic-img" class="img-fluid" src="{{$comic_img.Permalink}}" alt="{{$comic_alt}}"/>

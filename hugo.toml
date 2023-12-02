@@ -6,3 +6,13 @@ title = 'My Webcomic'
 description = 'A minimal webcomic template built with Bootstrap and Hugo.'
 [params.author]
 name = 'My Name'
+
+[[menu.main]]
+name = 'Home'
+pageRef = '/'
+weight = 1
+
+[[menu.main]]
+name = 'About'
+pageRef = '/about'
+weight = 2

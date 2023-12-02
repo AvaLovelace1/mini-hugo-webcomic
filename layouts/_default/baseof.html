@@ -3,9 +3,10 @@
 
 {{block "head" .}}{{partial "head" .}}{{end}}
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 {{block "header" .}}{{partial "header" .}}{{end}}
 {{block "main" .}}{{end}}
+{{block "footer" .}}{{partial "footer" .}}{{end}}
 
 {{block "tail" .}}{{partial "tail" .}}{{end}}
 </body>

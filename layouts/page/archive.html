@@ -9,7 +9,9 @@
             <h2><a class="archive-chapter-title" href="{{.Permalink}}" title="{{$page.dateStr}}">{{.Title}}</a></h2>
             <p>
         {{end}}
-        <a class="archive-page-link" href="{{.Permalink}}" title="{{$page.dateStr}}">{{$page.pageNum}}</a>
+        {{if not $page.isSinglePageChapter}}
+            <a class="archive-page-link" href="{{.Permalink}}" title="{{$page.dateStr}}">{{$page.pageNum}}</a>
+        {{end}}
         {{if $page.isLastPageOfChapter}}
             </p>
         {{end}}

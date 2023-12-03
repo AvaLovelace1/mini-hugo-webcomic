@@ -10,7 +10,8 @@
 
 {{$comicsImgDir := "img/comics"}}
 {{$comicImgRaw := resources.GetMatch (printf "%s/%s_%03d*" $comicsImgDir $chapter $pageNum)}}
+{{$comicThumbImgRaw := resources.GetMatch (printf "%s/%s_thumb*" $comicsImgDir $chapter)}}
 
 {{return dict "chapter" $chapter "pageNum" $pageNum "dateStr" $dateStr "alt" $alt "hover" $hover
 "isFirstPageOfChapter" $isFirstPageOfChapter "isLastPageOfChapter" $isLastPageOfChapter
-"isSinglePageChapter" $isSinglePageChapter "comicImgRaw" $comicImgRaw}}
+"isSinglePageChapter" $isSinglePageChapter "comicImgRaw" $comicImgRaw "comicThumbImgRaw" $comicThumbImgRaw}}

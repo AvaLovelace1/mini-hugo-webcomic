@@ -3,9 +3,19 @@
 
     <h1>{{.Title}}</h1>
     {{.Content}}
+
     {{range $comics.comicPages.Reverse}}
         {{$page := partial "pagedata" .}}
         {{if $page.isFirstPageOfChapter}}
+            {{$imgThumb := $page.comicThumbImgRaw.Resize (printf "%dx %s" site.Params.comicThumbResizeWidth site.Params.imgFormat)}}
+            <div class="row mb-3 gx-3">
+            <div class="col-3">
+                <a href="{{.Permalink}}">
+                    <img class="img-fluid img-thumbnail archive-img-thumb" src="{{$imgThumb.Permalink}}"
+                         alt="{{$page.alt}}" title="{{.Title}}"/>
+                </a>
+            </div>
+            <div class="col">
             <h2><a class="archive-chapter-title" href="{{.Permalink}}" title="{{$page.dateStr}}">{{.Title}}</a></h2>
             <p>
         {{end}}
@@ -14,6 +24,8 @@
         {{end}}
         {{if $page.isLastPageOfChapter}}
             </p>
+            </div>
+            </div>
         {{end}}
     {{end}}
 {{end}}

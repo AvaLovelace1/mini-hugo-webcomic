@@ -6,6 +6,7 @@ title = 'Mini Webcomic'
 description = 'A minimal webcomic template built with Bootstrap and Hugo.'
 dateFormat = "Jan 2, 2006"
 comicResizeWidth = 1280
+comicThumbResizeWidth = 300
 imgFormat = "jpg"
 [params.author]
 name = 'Your Name'

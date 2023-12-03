@@ -1,5 +1,9 @@
 <div class="col-auto">
-    <a id="{{.id}}" class="btn btn-light {{.class}}" href="{{.href}}" title="{{.title}}" role="button">
+    <a {{with .id}}id="{{.}}"{{end}}
+       class="btn btn-light {{.class}}"
+       {{with .href}}href="{{.}}"{{end}}
+       {{with .title}}title="{{.}}"{{end}}
+       role="button">
         {{.content | safeHTML}}
     </a>
 </div>

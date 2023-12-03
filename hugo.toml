@@ -8,7 +8,9 @@ dateFormat = "Jan 2, 2006"
 comicResizeWidth = 1280
 imgFormat = "jpg"
 [params.author]
-name = 'My Name'
+name = 'Your Name'
+
+[taxonomies]
 
 [[menu.main]]
 name = 'Home'

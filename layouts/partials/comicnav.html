@@ -1,7 +1,22 @@
+{{$comicPages := where site.RegularPages "Section" "comic"}}
+{{$numComics := len $comicPages}}
+{{$firstPage := index $comicPages (sub $numComics 1)}}
+{{$lastPage := index $comicPages 0}}
+
+{{$index := -1}}
+{{range $i, $page := $comicPages}}
+    {{if eq $page $}}
+        {{$index = $i}}
+    {{end}}
+{{end}}
+
+{{$prevPage := index $comicPages (add $index 1) | default $firstPage}}
+{{$nextPage := index $comicPages (sub $index 1) | default $lastPage}}
+
 <div class="row justify-content-center gx-2">
-    {{partial "comicnav_btn" (dict "id" "first-comic" "href" "" "title" "First comic" "content" "&lang;&lang;")}}
-    {{partial "comicnav_btn" (dict "id" "prev-comic" "href" "" "title" "Previous comic" "content" "&lang;")}}
-    {{partial "comicnav_btn" (dict "id" "random-comic" "href" "" "title" "Random comic" "content" "&infin;")}}
-    {{partial "comicnav_btn" (dict "id" "next-comic" "href" "" "title" "Next comic" "content" "&rang;")}}
-    {{partial "comicnav_btn" (dict "id" "last-comic" "href" "" "title" "Last comic" "content" "&rang;&rang;")}}
+    {{partial "comicnav_btn" (dict "id" "first-comic" "href" $firstPage.Permalink "title" "First page" "content" "&lang;&lang;")}}
+    {{partial "comicnav_btn" (dict "id" "prev-comic" "href" $prevPage.Permalink "title" "Previous page" "content" "&lang;")}}
+    {{partial "comicnav_btn" (dict "id" "random-comic" "href" "" "title" "Random page" "content" "&infin;")}}
+    {{partial "comicnav_btn" (dict "id" "next-comic" "href" $nextPage.Permalink "title" "Next page" "content" "&rang;")}}
+    {{partial "comicnav_btn" (dict "id" "last-comic" "href" $lastPage.Permalink "title" "Last page" "content" "&rang;&rang;")}}
 </div>

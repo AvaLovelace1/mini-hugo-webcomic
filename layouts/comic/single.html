@@ -2,8 +2,8 @@
     {{$comics_dir := "img/comics"}}
     {{$chapter := .Params.chapterID}}
     {{$page_num := int .File.BaseFileName}}
-    {{$is_first_page_of_chapter := or (not .Next) (ne .Next.Params.chapterID $chapter)}}
-    {{$is_last_page_of_chapter := or (not .Prev) (ne .Prev.Params.chapterID $chapter)}}
+    {{$is_first_page_of_chapter := not .PrevInSection}}
+    {{$is_last_page_of_chapter := not .NextInSection}}
     {{$is_single_page_chapter := and $is_first_page_of_chapter $is_last_page_of_chapter}}
 
     {{$first_page_of_chapter_url := absURL (printf "comic/%s/1/" $chapter)}}

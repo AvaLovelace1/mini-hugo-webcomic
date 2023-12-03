@@ -1,32 +1,3 @@
 {{define "main"}}
-    {{$comics_dir := "img/comics"}}
-    {{$chapter := .Params.chapterID}}
-    {{$page_num := int .File.BaseFileName}}
-    {{$is_first_page_of_chapter := not .PrevInSection}}
-    {{$is_last_page_of_chapter := not .NextInSection}}
-    {{$is_single_page_chapter := and $is_first_page_of_chapter $is_last_page_of_chapter}}
-
-    {{$first_page_of_chapter_url := absURL (printf "comic/%s/1/" $chapter)}}
-
-    {{$comic_img_raw := resources.GetMatch (printf "%s/%s_%03d*" $comics_dir $chapter $page_num)}}
-    {{$comic_img := $comic_img_raw.Resize (printf "%dx %s" site.Params.comicResizeWidth site.Params.imgFormat)}}
-    {{$comic_alt := printf "%s comic page %d" .Title $page_num}}
-    {{$comic_hover := .Params.hover}}
-
-    {{partial "comicnav" .}}
-    <img id="comic-img" class="img-fluid" src="{{$comic_img.Permalink}}" alt="{{$comic_alt}}"
-         {{with $comic_hover}}title="{{.}}"{{end}}/>
-    {{partial "comicnav" .}}
-
-    <h1 class="mt-4 mt-sm-5">
-        <a id="title-chapter-link" href="{{$first_page_of_chapter_url}}" title="Jump to the first page of this chapter">
-            {{.Title}}</a>
-        {{if not $is_single_page_chapter}}
-            &bull; Page {{$page_num}}
-        {{end}}
-    </h1>
-    <p>
-        <span id="publish-date"><strong>Published:</strong> {{.Date.Format site.Params.dateFormat}}<br/></span>
-    </p>
-    <div id="transcript">{{.Content}}</div>
+    {{partial "comic" .}}
 {{end}}

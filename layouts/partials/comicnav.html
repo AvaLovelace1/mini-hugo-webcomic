@@ -8,20 +8,20 @@
 
 <div class="row justify-content-center gx-2">
     {{if $isFirstPage}}
-        {{partial "comicnav_btn" (dict "id" "first-comic" "content" "&lang;&lang;" "title" "First page" "class" "disabled")}}
-        {{partial "comicnav_btn" (dict "id" "prev-comic" "content" "&lang;" "title" "Previous page" "class" "disabled")}}
+        {{partial "comicnav_btn" (dict "id" "first-comic" "content" "⟨⟨" "title" "First page" "class" "disabled")}}
+        {{partial "comicnav_btn" (dict "id" "prev-comic" "content" "⟨" "title" "Previous page" "class" "disabled")}}
     {{else}}
-        {{partial "comicnav_btn" (dict "id" "first-comic" "content" "&lang;&lang;" "title" "First page" "href" $comics.firstPage.Permalink)}}
-        {{partial "comicnav_btn" (dict "id" "prev-comic" "content" "&lang;" "title" "Previous page" "href" $prevPage.Permalink)}}
+        {{partial "comicnav_btn" (dict "id" "first-comic" "content" "⟨⟨" "title" "First page" "href" $comics.firstPage.Permalink)}}
+        {{partial "comicnav_btn" (dict "id" "prev-comic" "content" "⟨" "title" "Previous page" "href" $prevPage.Permalink)}}
     {{end}}
 
-    {{partial "comicnav_btn" (dict "id" "random-comic" "href" "" "title" "Random page" "content" "&infin;")}}
+    {{partial "comicnav_btn" (dict "id" "random-comic" "href" "" "title" "Random page" "content" "∞")}}
 
     {{if $isLastPage}}
-        {{partial "comicnav_btn" (dict "id" "next-comic" "content" "&rang;" "title" "Next page" "class" "disabled")}}
-        {{partial "comicnav_btn" (dict "id" "last-comic" "content" "&rang;&rang;" "title" "Last page" "class" "disabled")}}
+        {{partial "comicnav_btn" (dict "id" "next-comic" "content" "⟩" "title" "Next page" "class" "disabled")}}
+        {{partial "comicnav_btn" (dict "id" "last-comic" "content" "⟩⟩" "title" "Last page" "class" "disabled")}}
     {{else}}
-        {{partial "comicnav_btn" (dict "id" "next-comic" "content" "&rang;" "title" "Next page" "href" $nextPage.Permalink)}}
-        {{partial "comicnav_btn" (dict "id" "last-comic" "content" "&rang;&rang;" "title" "Last page" "href" $comics.lastPage.Permalink)}}
+        {{partial "comicnav_btn" (dict "id" "next-comic" "content" "⟩" "title" "Next page" "href" $nextPage.Permalink)}}
+        {{partial "comicnav_btn" (dict "id" "last-comic" "content" "⟩⟩" "title" "Last page" "href" $comics.lastPage.Permalink)}}
     {{end}}
 </div>

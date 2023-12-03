@@ -1,0 +1,22 @@
+{{define "main"}}
+    {{$comics := partial "comicdata"}}
+
+    <h1>{{.Title}}</h1>
+    {{.Content}}
+    {{range $comics.comicPages.Reverse}}
+        {{$page_num := int .File.BaseFileName}}
+        {{$is_first_page_of_chapter := not .PrevInSection}}
+        {{$is_last_page_of_chapter := not .NextInSection}}
+        {{$is_single_page_chapter := and $is_first_page_of_chapter $is_last_page_of_chapter}}
+        {{$dateStr := .Date.Format site.Params.dateFormat}}
+
+        {{if $is_first_page_of_chapter}}
+            <h2><a class="archive-chapter-title" href="{{.Permalink}}" title="{{$dateStr}}">{{.Title}}</a></h2>
+            <p>
+        {{end}}
+        <a class="archive-page-link" href="{{.Permalink}}" title="{{$dateStr}}">{{$page_num}}</a>
+        {{if $is_last_page_of_chapter}}
+            </p>
+        {{end}}
+    {{end}}
+{{end}}

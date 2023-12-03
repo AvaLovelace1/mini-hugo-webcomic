@@ -1,0 +1,6 @@
+{{$comicPages := where site.RegularPages "Section" "comic"}}
+{{$numComics := len $comicPages}}
+{{$firstPage := index $comicPages (sub $numComics 1)}}
+{{$lastPage := index $comicPages 0}}
+
+{{return dict "comicPages" $comicPages "numComics" $numComics "firstPage" $firstPage "lastPage" $lastPage}}

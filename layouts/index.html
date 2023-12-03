@@ -1,7 +1,4 @@
 {{define "main"}}
-    {{$comicPages := where site.RegularPages "Section" "comic"}}
-    {{$numComics := len $comicPages}}
-    {{$lastPage := index $comicPages 0}}
-
-    {{partial "comic" $lastPage}}
+    {{$comics := partial "comicdata"}}
+    {{partial "comic" $comics.lastPage}}
 {{end}}

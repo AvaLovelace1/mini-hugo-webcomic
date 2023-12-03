@@ -1,20 +1,17 @@
-{{$comicPages := where site.RegularPages "Section" "comic"}}
-{{$numComics := len $comicPages}}
-{{$currPageIndex := partial "indexof" (dict "array" $comicPages "targetElem" .)}}
-{{$isFirstPage := eq $currPageIndex (sub $numComics 1)}}
+{{$comics := partial "comicdata"}}
+{{$currPageIndex := partial "indexof" (dict "array" $comics.comicPages "targetElem" .)}}
+{{$isFirstPage := eq $currPageIndex (sub $comics.numComics 1)}}
 {{$isLastPage := eq $currPageIndex 0}}
 
-{{$firstPage := index $comicPages (sub $numComics 1)}}
-{{$lastPage := index $comicPages 0}}
-{{$prevPage := index $comicPages (add $currPageIndex 1)}}
-{{$nextPage := index $comicPages (sub $currPageIndex 1)}}
+{{$prevPage := index $comics.comicPages (add $currPageIndex 1)}}
+{{$nextPage := index $comics.comicPages (sub $currPageIndex 1)}}
 
 <div class="row justify-content-center gx-2">
     {{if $isFirstPage}}
         {{partial "comicnav_btn" (dict "id" "first-comic" "content" "&lang;&lang;" "class" "disabled")}}
         {{partial "comicnav_btn" (dict "id" "prev-comic" "content" "&lang;" "class" "disabled")}}
     {{else}}
-        {{partial "comicnav_btn" (dict "id" "first-comic" "content" "&lang;&lang;" "href" $firstPage.Permalink "title" "First page")}}
+        {{partial "comicnav_btn" (dict "id" "first-comic" "content" "&lang;&lang;" "href" $comics.firstPage.Permalink "title" "First page")}}
         {{partial "comicnav_btn" (dict "id" "prev-comic" "content" "&lang;" "href" $prevPage.Permalink "title" "Previous page")}}
     {{end}}
 
@@ -25,6 +22,6 @@
         {{partial "comicnav_btn" (dict "id" "last-comic" "content" "&rang;&rang;" "class" "disabled")}}
     {{else}}
         {{partial "comicnav_btn" (dict "id" "next-comic" "content" "&rang;" "href" $nextPage.Permalink "title" "Next page")}}
-        {{partial "comicnav_btn" (dict "id" "last-comic" "content" "&rang;&rang;" "href" $lastPage.Permalink "title" "Last page")}}
+        {{partial "comicnav_btn" (dict "id" "last-comic" "content" "&rang;&rang;" "href" $comics.lastPage.Permalink "title" "Last page")}}
     {{end}}
 </div>

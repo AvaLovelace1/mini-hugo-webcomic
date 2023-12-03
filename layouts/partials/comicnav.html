@@ -3,15 +3,9 @@
 {{$firstPage := index $comicPages (sub $numComics 1)}}
 {{$lastPage := index $comicPages 0}}
 
-{{$index := -1}}
-{{range $i, $page := $comicPages}}
-    {{if eq $page $}}
-        {{$index = $i}}
-    {{end}}
-{{end}}
-
-{{$prevPage := index $comicPages (add $index 1) | default $firstPage}}
-{{$nextPage := index $comicPages (sub $index 1) | default $lastPage}}
+{{$currPageIndex := partial "indexof" (dict "array" $comicPages "targetElem" .)}}
+{{$prevPage := index $comicPages (add $currPageIndex 1) | default $firstPage}}
+{{$nextPage := index $comicPages (sub $currPageIndex 1) | default $lastPage}}
 
 <div class="row justify-content-center gx-2">
     {{partial "comicnav_btn" (dict "id" "first-comic" "href" $firstPage.Permalink "title" "First page" "content" "&lang;&lang;")}}

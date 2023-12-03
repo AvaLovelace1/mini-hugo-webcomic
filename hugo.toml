@@ -20,6 +20,11 @@ name = 'About'
 pageRef = '/about'
 weight = 2
 
+[[menu.main]]
+name = 'Archive'
+pageRef = '/archive'
+weight = 3
+
 [imaging]
 resampleFilter = "Lanczos"
 quality = 75

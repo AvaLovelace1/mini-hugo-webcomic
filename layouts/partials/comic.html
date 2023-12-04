@@ -1,10 +1,10 @@
 {{$page := partial "comic-page-data" .}}
 {{$firstPageOfChapterURL := absURL (printf "comic/%s/1/" $page.chapter)}}
-{{$comic_img := $page.comicImgRaw.Resize (printf "%dx %s" site.Params.comicResizeWidth site.Params.imgFormat)}}
+{{$comicImg := $page.comicImgRaw.Resize (printf "%dx %s" site.Params.comicResizeWidth site.Params.imgFormat)}}
 
 {{partial "comic-nav" .}}
-<img id="comic-img" class="img-fluid" src="{{$comic_img.Permalink}}" alt="{{$page.alt}}"
-     {{with $page.hover}}title="{{.}}"{{end}}/>
+<img id="comic-img" class="img-fluid" src="{{$comicImg.Permalink}}" alt="{{$page.alt}}"
+     {{with $page.hover}}title="{{.}}"{{end}} width="{{$comicImg.Width}}" height="{{$comicImg.Height}}"/>
 {{partial "comic-nav" .}}
 
 <h1 class="mt-4 mt-sm-5">

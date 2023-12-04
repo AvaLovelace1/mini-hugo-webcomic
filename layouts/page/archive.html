@@ -1,11 +1,11 @@
 {{define "main"}}
-    {{$comics := partial "comicdata"}}
+    {{$comics := partial "comic-data"}}
 
     <h1>{{.Title}}</h1>
     {{.Content}}
 
     {{range $comics.comicPages.Reverse}}
-        {{$page := partial "pagedata" .}}
+        {{$page := partial "comic-page-data" .}}
         {{if $page.isFirstPageOfChapter}}
             {{$imgThumb := $page.comicThumbImgRaw.Resize (printf "%dx %s" site.Params.comicThumbResizeWidth site.Params.imgFormat)}}
             <div class="row mb-3 gx-3">

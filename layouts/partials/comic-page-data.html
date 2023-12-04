@@ -8,7 +8,7 @@
 {{$isLastPageOfChapter := not .NextInSection}}
 {{$isSinglePageChapter := and $isFirstPageOfChapter $isLastPageOfChapter}}
 
-{{$comicsImgDir := "img/comics"}}
+{{$comicsImgDir := "img/comic"}}
 {{$comicImgRaw := resources.GetMatch (printf "%s/%s_%03d*" $comicsImgDir $chapter $pageNum)}}
 {{$comicThumbImgRaw := resources.GetMatch (printf "%s/%s_thumb*" $comicsImgDir $chapter)}}
 

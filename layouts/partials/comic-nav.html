@@ -15,7 +15,8 @@
         {{partial "comic-nav-btn" (dict "class" "prev-page" "content" "⟨" "title" "Previous page" "href" $prevPage.Permalink)}}
     {{end}}
 
-    {{partial "comic-nav-btn" (dict "class" "random-page" "href" "" "title" "Random page" "content" "∞")}}
+    <!-- Initialize random button href to "/" here. This avoids Safari bug where button appears black when setting its href via JavaScript. -->
+    {{partial "comic-nav-btn" (dict "class" "random-page" "href" "/" "title" "Random page" "content" "∞")}}
 
     {{if $isLastPage}}
         {{partial "comic-nav-btn" (dict "class" "next-page disabled" "content" "⟩" "title" "Next page")}}

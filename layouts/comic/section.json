@@ -1,0 +1,9 @@
+{{$result := newScratch}}
+{{$result.Set "pageURLs" slice}}
+
+{{range where site.RegularPages "Section" .Section}}
+    {{$result.Add "pageURLs" .Permalink}}
+{{end}}
+
+{{$resultDict := dict "pageURLs" ($result.Get "pageURLs")}}
+{{$resultDict | jsonify}}

@@ -1,4 +1,3 @@
 +++
-[_build]
-render = 'never'
+outputs = ['json']
 +++

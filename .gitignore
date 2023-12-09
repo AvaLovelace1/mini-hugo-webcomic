@@ -1,3 +1,5 @@
 .*
 resources
 !.gitignore
+!.github/
+!.github/workflows/

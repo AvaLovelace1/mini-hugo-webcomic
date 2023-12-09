@@ -1,4 +1,4 @@
 {{define "main"}}
-    {{$comics := partial "comic-data"}}
-    {{partial "comic" $comics.lastPage}}
+    {{$comics := partial "comic/get-all-comics.html"}}
+    {{partial "comic/comic.html" $comics.lastPage}}
 {{end}}

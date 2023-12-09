@@ -1,11 +1,11 @@
-{{$page := partial "comic-page-data" .}}
+{{$page := partial "comic/get-comic-page.html" .}}
 {{$firstPageOfChapterURL := absURL (printf "comic/%s/1/" $page.chapter)}}
 {{$comicImg := $page.comicImgRaw.Resize (printf "%dx %s" site.Params.comicResizeWidth site.Params.imgFormat)}}
 
-{{partial "comic-nav" .}}
+{{partial "comic/nav.html" .}}
 <img id="comic-img" class="img-fluid" src="{{$comicImg.Permalink}}" alt="{{$page.alt}}"
      {{with $page.hover}}title="{{.}}"{{end}} width="{{$comicImg.Width}}" height="{{$comicImg.Height}}"/>
-{{partial "comic-nav" .}}
+{{partial "comic/nav.html" .}}
 
 <h1 class="mt-4 mt-sm-5">
     <a id="title-chapter-link" href="{{$firstPageOfChapterURL}}" title="Jump to the first page of this chapter">

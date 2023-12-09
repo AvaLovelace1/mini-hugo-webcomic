@@ -1,5 +1,5 @@
 {{if or .IsHome (eq .Section "comic")}}
-    {{$params := dict "baseURL" site.BaseURL}}
+    {{$params := dict "baseURL" (absURL "")}}
     {{$js := resources.Get "js/random-comic.js" | js.Build (dict "params" $params) | resources.Minify | resources.Fingerprint}}
     <script src="{{$js.Permalink}}"></script>
 {{end}}

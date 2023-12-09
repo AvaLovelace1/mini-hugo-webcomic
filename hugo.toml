@@ -4,10 +4,10 @@ title = 'Mini Webcomic'
 
 [params]
 description = 'A minimal webcomic template built with Bootstrap and Hugo.'
-dateFormat = "Jan 2, 2006"
+dateFormat = 'Jan 2, 2006'
 comicResizeWidth = 1280
 comicThumbResizeWidth = 300
-imgFormat = "jpg"
+imgFormat = 'jpg'
 [params.author]
 name = 'Your Name'
 
@@ -29,5 +29,5 @@ pageRef = '/archive'
 weight = 3
 
 [imaging]
-resampleFilter = "Lanczos"
+resampleFilter = 'Lanczos'
 quality = 75

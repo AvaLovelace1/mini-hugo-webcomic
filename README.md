@@ -1,9 +1,9 @@
 # mini-hugo-webcomic
 
-**[Live Demo](https://avalovelace1.github.io/mini-hugo-webcomic/)**
-
 A minimal, responsive webcomic template created for my comic, *[Academy 118](https://academy118.com)*.
 Features easy addition of new pages with Markdown. **No PHP or databases required!**
+
+**[Live Demo](https://avalovelace1.github.io/mini-hugo-webcomic/)**
 
 ## Installation
 

@@ -1,4 +1,4 @@
-{{$title := cond .IsHome (site.Title) (printf "%s | %s" .Title site.Title)}}
+{{$title := cond .IsHome (site.Title) (printf "%s • %s" .Title site.Title)}}
 {{$author := site.Params.author.name}}
 {{$description := .Description | default site.Params.description}}
 

@@ -69,10 +69,10 @@ To add a new comic page to an existing chapter, place the comic page image in `a
 with the filename `[CHAPTER_ID]_[3-DIGIT-PAGE_NUMBER].[EXTENSION]`. Then, run:
 
 ```bash
-hugo new content --kind comic-page comic/[CHAPTER_NAME]/[PAGE_NUMBER].md
+hugo new content --kind comic-page comic/[CHAPTER_ID]/[PAGE_NUMBER].md
 ```
 
-This creates a Markdown file containing comic page information at `content/comic/[CHAPTER_NAME]/[PAGE_NUMBER].md`.
+This creates a Markdown file containing comic page information at `content/comic/[CHAPTER_ID]/[PAGE_NUMBER].md`.
 To change the comic page information, modify the frontmatter of this file. Frontmatter options include:
 
 - `date`: The publication date of the comic page.

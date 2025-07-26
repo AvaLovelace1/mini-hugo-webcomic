@@ -6,6 +6,8 @@
 generator [Hugo](https://gohugo.io/).
 It was created for my comic, *[Academy 118](https://academy118.com)*.
 
+> Not into Hugo? Try **[mini-php-webcomic](https://github.com/AvaLovelace1/mini-php-webcomic)**!
+
 ## Installation
 
 First clone this repository:
@@ -38,9 +40,10 @@ Copy the contents of this directory to your web server's root directory, and you
 
 ### Site customization
 
-**Adjust global site options** such as title and author by modifying the `hugo.toml` file.
+This template’s layout and styling are intentionally kept bare-bones to allow for easy customization. You can modify
+the site to your heart’s content by editing the `.html` and `assets/scss/main.scss` files.
 
-**Add custom CSS** by modifying `assets/scss/main.scss`.
+Adjust global site options such as title and author by modifying the `hugo.toml` file.
 
 ### Adding new comics
 
@@ -85,7 +88,7 @@ To change the comic page information, modify the frontmatter of this file. Front
 
 ### Adding non-comic pages
 
-Non-comic pages (such as an "About" or "Extras" page) can be added with:
+Non-comic pages (such as an “About” or “Extras” page) can be added with:
 
 ```bash
 hugo new content [TITLE].md

@@ -6,7 +6,7 @@
 {{$prevPage := index $comics.comicPages (add $currPageIndex 1)}}
 {{$nextPage := index $comics.comicPages (sub $currPageIndex 1)}}
 
-<div class="row justify-content-center gx-2">
+<nav class="row justify-content-center gx-2">
     {{if $isFirstPage}}
         {{partial "comic/nav-btn.html" (dict "class" "first-page disabled" "content" "⟨⟨" "title" "First page")}}
         {{partial "comic/nav-btn.html" (dict "class" "prev-page disabled" "content" "⟨" "title" "Previous page")}}
@@ -25,4 +25,4 @@
         {{partial "comic/nav-btn.html" (dict "class" "next-page" "content" "⟩" "title" "Next page" "href" $nextPage.Permalink)}}
         {{partial "comic/nav-btn.html" (dict "class" "last-page" "content" "⟩⟩" "title" "Last page" "href" $comics.lastPage.Permalink)}}
     {{end}}
-</div>
+</nav>

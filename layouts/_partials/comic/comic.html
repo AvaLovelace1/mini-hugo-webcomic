@@ -15,6 +15,8 @@
     {{end}}
 </h1>
 <p>
-    <span id="publish-date"><strong>Published:</strong> {{$page.dateStr}}<br/></span>
+    <span id="publish-date">
+        <b class="fw-bolder">Published:</b> <time>{{$page.dateStr}}</time><br/>
+    </span>
 </p>
 <div id="transcript">{{.Content}}</div>

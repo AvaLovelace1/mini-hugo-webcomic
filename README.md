@@ -1,13 +1,12 @@
 # mini-hugo-webcomic
 
-A minimal, responsive webcomic template created for my comic, *[Academy 118](https://academy118.com)*.
-Features easy addition of new pages with Markdown. **No PHP or databases required!**
+[![Demo][Browser]][Demo]
 
-**[Live Demo](https://avalovelace1.github.io/mini-hugo-webcomic/)**
+**mini-hugo-webcomic** is a minimal, responsive webcomic template for the static site
+generator [Hugo](https://gohugo.io/).
+It was created for my comic, *[Academy 118](https://academy118.com)*.
 
 ## Installation
-
-**mini-hugo-webcomic** is powered by the static site generator [Hugo](https://gohugo.io).
 
 First clone this repository:
 
@@ -93,3 +92,9 @@ hugo new content [TITLE].md
 ```
 
 You may add this page to the navbar by creating an additional `menu.main` entry in `hugo.toml`.
+
+<!-- Links -->
+
+[Demo]: https://avalovelace1.github.io/mini-hugo-webcomic/
+
+[Browser]: https://img.shields.io/badge/Live%20Demo-4285F4?logo=GoogleChrome&logoColor=white&style=for-the-badge

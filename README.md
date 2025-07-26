@@ -2,7 +2,7 @@
 
 [![Demo][Browser]][Demo]
 
-**mini-hugo-webcomic** is a minimal, responsive webcomic template for the static site
+**mini-hugo-webcomic** is a minimal, responsive webcomic template built with the static site
 generator [Hugo](https://gohugo.io/).
 It was created for my comic, *[Academy 118](https://academy118.com)*.
 

@@ -17,6 +17,10 @@
 <p>
     <span id="publish-date">
         <b class="fw-bolder">Published:</b> <time>{{$page.dateStr}}</time><br/>
+        {{with $page.characters}}
+            <b class="fw-bolder">Featuring:</b>
+            {{range $i, $character := . -}}{{- if $i -}}, {{end}}{{$character}}{{- end -}}
+        {{end}}
     </span>
 </p>
 <div id="transcript">{{.Content}}</div>
